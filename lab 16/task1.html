@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+    <button onclick="addDiv()">Додати елемент</button>
+    <div class="container"></div>
+
+    <script>
+        function addDiv() {
+            let newDiv = document.createElement('div');
+            newDiv.textContent = 'Новий елемент';
+            newDiv.style.backgroundColor = '#4fc3f7';
+            newDiv.style.padding = '10px';
+            newDiv.style.marginTop = '10px';
+            document.querySelector('.container').appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>

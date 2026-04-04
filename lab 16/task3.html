@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+</head>
+<body>
+    <div class="toggle-item">Елемент 1</div>
+    <div class="toggle-item">Елемент 2</div>
+    <div class="toggle-item">Елемент 3</div>
+    <button onclick="toggleElements()">Показати / Приховати</button>
+
+    <script>
+        function toggleElements() {
+            let items = document.querySelectorAll('.toggle-item');
+            items.forEach(function(item) {
+                if (item.style.display === 'none') {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

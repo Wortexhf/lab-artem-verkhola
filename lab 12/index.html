@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Agency</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header class="header" id="top">
+  <div class="container">
+    <div class="header__inner">
+      <a href="#" class="header__logo"><span>Creative</span> Agency</a>
+      <button class="header__toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      <nav class="header__nav" id="mainNav">
+        <ul>
+          <li><a href="#top">Головна</a></li>
+          <li><a href="#services">Послуги</a></li>
+          <li><a href="#features">Переваги</a></li>
+          <li><a href="#footer">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <h1 class="hero__title">Розвивайте свій бізнес з нами</h1>
+      <p class="hero__subtitle">Ми допоможемо вам створити унікальний та ефективний бренд</p>
+      <a href="#services" class="hero__btn">Дізнатися більше</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="services__title">Наші послуги</h2>
+    <div class="services__grid">
+      <div class="services__card">
+        <i class="fas fa-code"></i>
+        <h3>Розробка ПЗ</h3>
+        <p>Створення надійних програмних рішень для бізнесу.</p>
+      </div>
+      <div class="services__card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Аналіз даних</h3>
+        <p>Опрацювання та візуалізація великих масивів інформації.</p>
+      </div>
+      <div class="services__card">
+        <i class="fas fa-cloud"></i>
+        <h3>Хмарні рішення</h3>
+        <p>Оптимізація бізнес-процесів за допомогою хмарних технологій.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <h2 class="features__title">Наші переваги</h2>
+    <ul class="features__list">
+      <li class="features__item">
+        <i class="fas fa-bolt"></i>
+        <span>Швидке виконання проектів</span>
+      </li>
+      <li class="features__item">
+        <i class="fas fa-shield-alt"></i>
+        <span>Надійність та безпека</span>
+      </li>
+      <li class="features__item">
+        <i class="fas fa-users"></i>
+        <span>Досвідчена команда</span>
+      </li>
+      <li class="features__item">
+        <i class="fas fa-headset"></i>
+        <span>Підтримка 24/7</span>
+      </li>
+      <li class="features__item">
+        <i class="fas fa-star"></i>
+        <span>Висока якість роботи</span>
+      </li>
+      <li class="features__item">
+        <i class="fas fa-handshake"></i>
+        <span>Прозорі умови співпраці</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; 2025 Creative Agency. Всі права захищені.</p>
+      <div class="footer__contact">
+        <a href="mailto:info@agency.ua">info@agency.ua</a>
+      </div>
+      <div class="footer__socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('mainNav').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

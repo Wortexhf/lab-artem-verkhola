@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <label><input type="checkbox"> Option 1</label><br>
+    <label><input type="checkbox"> Option 2</label><br>
+    <label><input type="checkbox"> Option 3</label><br>
+    <label><input type="checkbox"> Option 4</label><br>
+    <label><input type="checkbox"> Option 5</label><br>
+    <label><input type="checkbox"> Option 6</label>
+
+    <script>
+        $(document).ready(function() {
+            $('input[type="checkbox"]').on('change', function() {
+                if ($('input[type="checkbox"]:checked').length >= 3) {
+                    $('input[type="checkbox"]').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

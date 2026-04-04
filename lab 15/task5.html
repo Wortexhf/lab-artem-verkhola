@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown to New Year</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="countdown">
+        <div class="block">
+            <span id="days">00</span>
+            <span>days</span>
+        </div>
+        <div class="block">
+            <span id="hours">00</span>
+            <span>hours</span>
+        </div>
+        <div class="block">
+            <span id="minutes">00</span>
+            <span>minutes</span>
+        </div>
+        <div class="block">
+            <span id="seconds">00</span>
+            <span>seconds</span>
+        </div>
+    </div>
+
+    <script>
+        function pad(n) {
+            return n < 10 ? '0' + n : n;
+        }
+
+        function updateCountdown() {
+            let now = new Date();
+            let newYear = new Date(now.getFullYear() + 1, 0, 1);
+            let diff = newYear - now;
+
+            let countdownDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+            let countdownHours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let countdownMinutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            let countdownSeconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = pad(countdownDays);
+            document.getElementById('hours').textContent = pad(countdownHours);
+            document.getElementById('minutes').textContent = pad(countdownMinutes);
+            document.getElementById('seconds').textContent = pad(countdownSeconds);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

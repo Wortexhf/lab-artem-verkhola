@@ -1,0 +1,47 @@
+.footer {
+  background: $dark;
+  color: rgba($white, 0.7);
+  padding: $spacing-lg 0;
+
+  &__inner {
+    @include flex-between;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+      gap: $spacing-md;
+      text-align: center;
+    }
+  }
+
+  &__copy {
+    font-size: 0.9rem;
+  }
+
+  &__socials {
+    display: flex;
+    gap: $spacing-md;
+
+    a {
+      color: rgba($white, 0.6);
+      font-size: 1.1rem;
+      transition: $transition;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &__contact {
+    font-size: 0.9rem;
+
+    a {
+      color: rgba($white, 0.7);
+      transition: $transition;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

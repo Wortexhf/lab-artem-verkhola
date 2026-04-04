@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .block {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            border-radius: 4px;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            cursor: pointer;
+            background: #eee;
+            border: 1px solid #999;
+            padding: 2px 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block"><h3>Header 1</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia distinctio doloribus nulla laboriosam optio odio dolor officiis fugit aliquam eos cum quia sequi quidem voluptate sint praesentium.</p></div>
+    <div class="block"><h3>Header 2</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia distinctio doloribus nulla laboriosam optio odio dolor officiis fugit aliquam eos cum quia sequi quidem voluptate sint praesentium.</p></div>
+    <div class="block"><h3>Header 3</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia distinctio doloribus nulla laboriosam optio odio dolor officiis fugit aliquam eos cum quia sequi quidem voluptate sint praesentium.</p></div>
+
+    <script>
+        let blocks = document.querySelectorAll('.block');
+        blocks.forEach(function(block) {
+            let btn = document.createElement('button');
+            btn.textContent = 'x';
+            btn.className = 'delete-btn';
+            btn.addEventListener('click', function() {
+                block.remove();
+            });
+            block.appendChild(btn);
+        });
+    </script>
+</body>
+</html>

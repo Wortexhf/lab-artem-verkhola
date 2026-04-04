@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Form</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #cfd8dc; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: Arial, sans-serif; }
+
+    .card-form { background: #fff; width: 520px; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+
+    .card-form__header { background: #455a64; color: #fff; text-align: center; padding: 18px; font-size: 16px; font-weight: bold; letter-spacing: 2px; }
+
+    .card-form__body { padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 20px; }
+
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 12px; color: #888; }
+    .field input { border: none; border-bottom: 1px solid #bbb; outline: none; font-size: 14px; color: #555; padding: 4px 0; background: transparent; }
+    .field input::placeholder { color: #bbb; }
+    .field input:focus { border-bottom-color: #455a64; }
+
+    .field--row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field--row .field { }
+
+    .field--cvv { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
+  </style>
+</head>
+<body>
+<div class="card-form">
+  <div class="card-form__header">CREDIT CARD DETAILS</div>
+  <div class="card-form__body">
+
+    <div class="field">
+      <label>Card Number</label>
+      <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+    </div>
+
+    <div class="field">
+      <label>Name On Card</label>
+      <input type="text" placeholder="Name Surname">
+    </div>
+
+    <div class="field--cvv">
+      <div class="field">
+        <label>Expiry Date</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <input type="text" placeholder="02" maxlength="2">
+          <input type="text" placeholder="2017" maxlength="4">
+        </div>
+      </div>
+      <div class="field">
+        <label>CVV / CVN</label>
+        <input type="password" placeholder="***" maxlength="3">
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

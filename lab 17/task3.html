@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        select { margin-right: 10px; padding: 5px; }
+        p { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <select name="country" id="country">
+        <option value="ger">Germany</option>
+        <option value="usa">USA</option>
+        <option value="ukr">Ukraine</option>
+    </select>
+
+    <select name="cities" id="cities"></select>
+
+    <p id="result"></p>
+
+    <script>
+        let cities = {
+            ger: ['Berlin', 'Munich', 'Hamburg'],
+            usa: ['New-York', 'Washington', 'Boston', 'Chikago'],
+            ukr: ['Kyiv', 'Lviv', 'Odesa', 'Kharkiv']
+        };
+
+        function updateCities() {
+            let country = document.getElementById('country');
+            let citySelect = document.getElementById('cities');
+            let countryVal = country.value;
+
+            citySelect.innerHTML = '';
+            cities[countryVal].forEach(function(city) {
+                let option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+
+            updateResult();
+        }
+
+        function updateResult() {
+            let country = document.getElementById('country');
+            let citySelect = document.getElementById('cities');
+            let countryText = country.options[country.selectedIndex].text;
+            document.getElementById('result').textContent = countryText + ',' + citySelect.value;
+        }
+
+        document.getElementById('country').addEventListener('change', updateCities);
+        document.getElementById('cities').addEventListener('change', updateResult);
+
+        updateCities();
+    </script>
+</body>
+</html>

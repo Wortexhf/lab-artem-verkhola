@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+<body>
+    <div id="myDiv">Це початковий текст</div>
+    <button onclick="editDiv()">Редагувати</button>
+
+    <script>
+        function editDiv() {
+            let text = prompt('Введіть новий текст:');
+            if (text !== null) {
+                document.getElementById('myDiv').textContent = text;
+            }
+        }
+    </script>
+</body>
+</html>

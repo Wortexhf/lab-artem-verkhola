@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h3>header1</h3>
+    <div>text1</div>
+    <h3>header2</h3>
+    <div>text2</div>
+
+    <script>
+        $(document).ready(function() {
+            $('h3 + div').each(function() {
+                let div = $(this);
+                div.prev('h3').before(div);
+            });
+        });
+    </script>
+</body>
+</html>

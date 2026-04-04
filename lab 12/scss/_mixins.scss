@@ -1,0 +1,59 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin button($bg, $color: $white) {
+  display: inline-block;
+  padding: 12px 28px;
+  background: $bg;
+  color: $color;
+  border: none;
+  border-radius: $radius;
+  font-size: $font-size-base;
+  cursor: pointer;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    background: darken($bg, 10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin card-shadow {
+  box-shadow: $shadow;
+  border-radius: $radius;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+  }
+}
+
+@mixin respond-to($bp) {
+  @if $bp == mobile {
+    @media (max-width: #{$bp-mobile}) { @content; }
+  } @else if $bp == tablet {
+    @media (max-width: #{$bp-tablet}) { @content; }
+  } @else if $bp == desktop {
+    @media (max-width: #{$bp-desktop}) { @content; }
+  }
+}
+
+@mixin fluid-font($min, $max) {
+  font-size: clamp(#{$min}, 3vw, #{$max});
+}

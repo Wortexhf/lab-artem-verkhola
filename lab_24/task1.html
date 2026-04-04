@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <a href="https://google.com">Google (https)</a><br>
+    <a href="http://example.com">Example (http)</a><br>
+    <a href="https://github.com">GitHub (https)</a>
+
+    <script>
+        $(document).ready(function() {
+            $('a[href^="https://"]').attr('target', '_blank');
+        });
+    </script>
+</body>
+</html>

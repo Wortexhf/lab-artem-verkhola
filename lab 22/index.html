@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>eShop</title>
+</head>
+<body>
+
+    <header>
+        <span class="logo">eShop</span>
+        <button onclick="openModal()">create Product</button>
+    </header>
+
+    <div class="filter-bar">
+        <select id="filterCategory">
+            <option value="">-- All categories --</option>
+            <option value="smartphones">smartphones</option>
+            <option value="laptops">laptops</option>
+            <option value="fragrances">fragrances</option>
+            <option value="skincare">skincare</option>
+            <option value="groceries">groceries</option>
+            <option value="home-decoration">home-decoration</option>
+        </select>
+
+        <input type="text" id="filterSearch" placeholder="-- search product --">
+
+        <select id="filterSort">
+            <option value="">-- sort products (Don't sort) --</option>
+            <option value="price_asc">by increasing price</option>
+            <option value="price_desc">by decreasing price</option>
+            <option value="newest">newest first</option>
+            <option value="oldest">oldest first</option>
+        </select>
+    </div>
+
+    <div class="cards-container" id="cardsContainer"></div>
+
+    <div id="modal" class="modal-overlay" data-close="true">
+        <div class="modal-content">
+            <span class="close-btn" data-close="true">&times;</span>
+            <h2 class="modal-title" id="modalTitle">Create product</h2>
+
+            <form id="productForm" name="productForm" class="productForm">
+                <label>Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label>Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label>Price:</label>
+                <input type="number" id="price" name="price" min="0" required>
+
+                <label>Discount:</label>
+                <input type="number" id="discountPercentage" name="discountPercentage" min="0" required>
+
+                <label>In stock:</label>
+                <input type="number" id="stock" name="stock" min="0">
+
+                <label>Brand:</label>
+                <input type="text" id="brand" name="brand">
+
+                <label>Category:</label>
+                <select name="category" id="category" required>
+                    <option value="smartphones">Smartphones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="fragrances">Fragrances</option>
+                    <option value="skincare">Skincare</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="home-decoration">Home decoration</option>
+                </select>
+
+                <label>Link to picture:</label>
+                <input type="url" id="thumbnail" name="thumbnail" required>
+
+                <input type="submit" value="Save Product">
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+.header {
+  background: $primary;
+  padding: $spacing-md 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+
+  &__inner {
+    @include flex-between;
+  }
+
+  &__logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: 1px;
+
+    span {
+      color: lighten($primary, 40%);
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: $spacing-lg;
+    }
+
+    a {
+      color: rgba($white, 0.85);
+      font-size: 0.95rem;
+      transition: $transition;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  @include respond-to(tablet) {
+    &__toggle {
+      display: block;
+    }
+
+    &__nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: $primary-dark;
+      padding: $spacing-md;
+
+      &.open {
+        display: block;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: $spacing-md;
+      }
+    }
+  }
+}

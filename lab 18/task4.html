@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; display: flex; flex-wrap: wrap; gap: 20px; }
+    </style>
+</head>
+<body>
+    <script>
+        class Button {
+            constructor(text, border, color, background) {
+                this.text = text;
+                this.border = border;
+                this.color = color;
+                this.background = background;
+            }
+
+            render() {
+                let btn = document.createElement('button');
+                btn.textContent = this.text;
+                btn.style.border = this.border;
+                btn.style.color = this.color;
+                btn.style.background = this.background;
+                btn.style.padding = '10px 20px';
+                btn.style.cursor = 'pointer';
+                btn.style.fontSize = '16px';
+
+                let self = this;
+                btn.addEventListener('click', function() {
+                    console.log('Кнопка ' + self.text + ' натиснута. Колір кнопки - ' + self.background);
+                });
+
+                document.body.appendChild(btn);
+            }
+        }
+
+        class RoundedButton extends Button {
+            constructor(text, border, color, background, borderRadius) {
+                super(text, border, color, background);
+                this.borderRadius = borderRadius;
+            }
+
+            render() {
+                let btn = document.createElement('button');
+                btn.textContent = this.text;
+                btn.style.border = this.border;
+                btn.style.color = this.color;
+                btn.style.background = this.background;
+                btn.style.borderRadius = this.borderRadius;
+                btn.style.padding = '10px 20px';
+                btn.style.cursor = 'pointer';
+                btn.style.fontSize = '16px';
+
+                this.dropShadow(btn);
+
+                let self = this;
+                btn.addEventListener('click', function() {
+                    console.log('Кнопка ' + self.text + ' натиснута. Колір кнопки - ' + self.background);
+                });
+
+                document.body.appendChild(btn);
+            }
+
+            dropShadow(btn) {
+                btn.addEventListener('mouseover', function() {
+                    btn.style.boxShadow = '4px 4px 10px rgba(0,0,0,0.4)';
+                });
+                btn.addEventListener('mouseout', function() {
+                    btn.style.boxShadow = 'none';
+                });
+            }
+        }
+
+        new Button('Click me', '2px solid blue', 'blue', 'lightblue').render();
+        new Button('Press here', '2px solid green', 'green', 'lightgreen').render();
+        new Button('Click here', '2px solid steelblue', 'steelblue', 'lightskyblue').render();
+
+        new RoundedButton('Rounded_1', '2px solid orange', 'orange', 'lightgreen', '20px').render();
+        new RoundedButton('Rounded_2', '2px solid orange', 'orange', 'orange', '20px').render();
+        new RoundedButton('Rounded_3', '2px solid darkcyan', 'darkcyan', 'lightcyan', '20px').render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+.features {
+  padding: $spacing-xl 0;
+  background: $light;
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+    max-width: 700px;
+    margin: 0 auto;
+
+    @include respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-md;
+    background: $white;
+    border-radius: $radius;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: $transition;
+
+    &:hover {
+      box-shadow: $shadow;
+    }
+
+    i {
+      font-size: 1.4rem;
+      color: $primary;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 0.95rem;
+      color: $dark;
+      font-weight: 500;
+    }
+  }
+}
