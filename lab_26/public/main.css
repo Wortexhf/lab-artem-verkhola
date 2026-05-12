@@ -1,0 +1,22 @@
+.post-container {
+    margin: 50px 0;
+    text-align: center;
+    width: 600px;
+}
+
+.productForm {
+    display: grid;
+    grid-template-columns: 150px 300px;
+}
+
+.put-container {
+    margin: 50px 0;
+    text-align: center;
+    width: 600px;
+}
+
+.delete-container {
+    margin: 50px 0;
+    text-align: center;
+    width: 600px;
+}

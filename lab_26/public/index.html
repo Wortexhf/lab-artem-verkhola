@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Express</title>
+</head>
+<body>
+       
+    <div class="get-container">
+        <textarea rows="20" cols="60" id="response"></textarea> <br>
+        <button id="getBtn" onclick="sendGetRequest()">Send GET request</button>
+    </div>
+    
+    <div class="post-container">
+        <h2>Create new product</h2>
+        <form name="createProductForm" class="productForm">
+            <label for="name">Input product name:</label>
+            <input type="text" name="name" id="name" required>
+            <label for="category">Select category:</label>
+            <select name="category" id="category" required>
+                <option value="Category 1">Category 1</option>
+                <option value="Category 2">Category 2</option>
+                <option value="Category 3">Category 3</option>
+            </select>
+            <label for="price">Input product price:</label>
+            <input type="text" name="price" id="price" required>
+            <input type="submit" value="Send POST request">
+        </form>
+    </div>
+
+    <div class="put-container">
+            <h2>Update product</h2>
+            <form name="updateProductForm" class="productForm">
+                <label for="productId">Input product ID:</label>
+                <input type="number" name="productId" id="productId" required>
+                <label for="newPrice">Input product price:</label>
+                <input type="text" name="newPrice" id="newPrice" required>
+                <input type="submit" value="Send PUT request">
+            </form>
+    </div>
+
+        <div class="delete-container">
+            <h2>Delete product</h2>
+            <form name="deleteProductForm" class="productForm">
+                <label for="productIdToDelete">Input product ID:</label>
+                <input type="number" name="productIdToDelete" id="productIdToDelete" required>
+                <input type="submit" value="Send DELETE request">
+            </form>
+        </div>
+    
+    <script src="ajax.js"></script>
+</body>
+</html>
